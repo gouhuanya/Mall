@@ -1,0 +1,58 @@
+@import "./normalize.css";
+
+/* :root -> 获取根元素的 */
+:root{
+	/* 定义变量 */
+	--color-text: #666;    /* 文字颜色 */
+	--color-high-text: #ff5777;  /* 文字高亮之后的颜色 */
+	--color-tint: #ff8198;	/* 导航栏背景的颜色 */
+	--color-background: #fff; /* 背景颜色 */
+	--font-size: 14px;  /* 整体上字体的大小 */
+	--line-height: 1.5;   /* 行高 */
+}
+
+*,
+*::before,	     	/* ::before 创建一个伪元素，其将成为匹配选中的元素的第一个子元素*/
+*::after{			/* ::after用来创建一个伪元素，作为已选中元素的最后一个子元素*/
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft 
+	YaHei","微软雅黑",Arial,sans-serif;
+  user-select: none; /* 禁止用户鼠标在页面上选中文字/图片等 */
+  -webkit-tap-highlight-color: transparent; /* webkit是苹果浏览器引擎，tap点击，highlight背
+	景高亮，color颜色，颜色用数值调节 */
+  background: var(--color-background);
+  color: var(--color-text);
+	/* rem vw/vh */
+  width: 100vw;
+}
+
+a {
+	color: var(--color-text);
+	text-decoration: none;    /* 删除下划线 */
+}
+
+.clear-fix::after {    /* 清除浮动 */
+	clear: both; /*  在css里是清除左右两边浮动的意思  */
+	content: '';
+	display: block;
+	width: 0;
+	height: 0;		/* 将元素的显示设为无，即在网页中不占任何的位置。*/
+	visibility: hidden;  /*  将元素隐藏，但是在网页中该占的位置还是占着 */
+}
+
+.clear-fix{
+	zoom: 1;  /* 设置或检索对象的缩放比例 */
+}
+
+.left{
+	float: left;
+}
+
+.right{
+	float: right;
+}
